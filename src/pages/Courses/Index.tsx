@@ -7,9 +7,6 @@ import {
   TabList,
   Tab,
   TabIndicator,
-  InputGroup,
-  Input,
-  InputLeftElement,
   keyframes,
   Image,
 } from "@chakra-ui/react";
@@ -18,10 +15,10 @@ import { Layout } from "../../components/layout/Index";
 import { TbFilterEdit } from "react-icons/tb";
 import { IoChevronDownSharp } from "react-icons/io5";
 import { useState } from "react";
-import { CiSearch } from "react-icons/ci";
 import { EnrollBanner } from "../../components/Banners/Enroll";
 import { PreRecorded } from "../../components/Courses/PreRecorded";
 import SessionsImg from "../../assets/bg/sessions.svg";
+import { SearchBar } from "../../components/SearchBar/Index";
 
 const Courses = () => {
   const filterOptions = ["All", "Newest", "Higest Rated"];
@@ -123,24 +120,7 @@ const Courses = () => {
             </Flex>
 
             <Box flexGrow={1}>
-              <InputGroup>
-                <InputLeftElement pointerEvents="none">
-                  <CiSearch color="gray.300" />
-                </InputLeftElement>
-                <Input
-                  type="text"
-                  placeholder="Type What You Are Looking For"
-                  borderRadius="full"
-                  fontSize="sm"
-                  _focus={{
-                    outlineColor: "none",
-                    ring: 1,
-                    ringColor: "primary.500",
-                    border: "none",
-                    color: "gray.800",
-                  }}
-                />
-              </InputGroup>
+              <SearchBar />
             </Box>
           </Flex>
 

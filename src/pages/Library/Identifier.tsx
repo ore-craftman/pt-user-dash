@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { Layout } from "../../components/layout/Index";
 import { InfoCard } from "../../components/User/InfoCard";
-import ReactPlayer from "react-player";
+import ReactPlayer from "react-player/lazy";
 import { SlBookOpen } from "react-icons/sl";
 import UserImg from "../../assets/icons/user.svg";
 import Topics from "../../assets/bg/topics.svg";

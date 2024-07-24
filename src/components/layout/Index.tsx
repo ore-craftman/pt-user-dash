@@ -27,7 +27,12 @@ export const Layout = ({
           <Sidebar />
         </Box>
         <Box width={{ base: "18%", xl: "15%" }}></Box>
-        <Box minHeight={"100vh"} flexGrow={1} py={4}>
+        <Box
+          width={{ base: "81%", xl: "83%" }}
+          minHeight={"100vh"}
+          flexGrow={1}
+          py={4}
+        >
           {children}
         </Box>
       </Flex>

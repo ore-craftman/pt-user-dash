@@ -8,20 +8,38 @@ export const InfoCard = () => {
     <Box>
       <Flex justifyContent="space-between">
         <Flex gap={2} fontSize="lg">
-          <Button px={1.5} py={1} borderRadius="full">
-            <IoIosNotificationsOutline />
-          </Button>
-          <Button px={1.5} py={1} borderRadius="full">
-            <PiShoppingCartLight />
-          </Button>
+          <Flex
+            alignItems="center"
+            justifyContent="center"
+            borderRadius="full"
+            w={8}
+            h={8}
+            bgColor="gray.100"
+          >
+            <IoIosNotificationsOutline fontSize="16px" />
+          </Flex>
+          <Flex
+            alignItems="center"
+            justifyContent="center"
+            borderRadius="full"
+            w={8}
+            h={8}
+            bgColor="gray.100"
+          >
+            <PiShoppingCartLight fontSize="16px" />
+          </Flex>
         </Flex>
 
         <Flex gap={1}>
-          <Box mr={2}>
-            <Heading fontSize={{ base: "13px" }} fontWeight={400} m={0}>
+          <Box mx={2}>
+            <Heading
+              fontSize={{ base: "11px", xl: "13px" }}
+              fontWeight={400}
+              m={0}
+            >
               Adekunle Adedayo
             </Heading>
-            <Text color="gray.500" fontSize="11px" m={0}>
+            <Text color="gray.500" fontSize={{ base: "8px", xl: "10px" }} m={0}>
               kayfun@gmail.com
             </Text>
           </Box>
