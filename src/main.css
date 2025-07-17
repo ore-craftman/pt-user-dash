@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+/* src/index.css or your main CSS file */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.wrapper {
+    max-width: 1200px;
+    margin-left:  auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 0 10px;
+    }
+}
+.shadow-box {
+    box-shadow: 0px 11px 15.8px -4px rgba(33, 33, 33, 0.16);
+}
+/* .card-gradient{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 35.93%, rgba(0, 0, 0, 0.88) 100%), url('./pt-bg-card.jpg') #f0f0f0 50% / cover no-repeat;
+} */
+.bg-insight {
+    background-image: url('./pt-bg-insight.jpg');
+    background-color: #f0f0f0;
+    background-position: 0% 0%;
+    background-size: 100px 100px;
+    background-repeat: repeat;
+    background-color: #782DF3;
+}
+
+.marquee{
+    height: 172px;
+    position: relative;
+    overflow: hidden;   
+}
+.marquee-content {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    white-space: nowrap;
+    animation: marquee 15s linear infinite;
+}
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
