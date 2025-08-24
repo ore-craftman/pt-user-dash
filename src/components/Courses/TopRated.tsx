@@ -3,11 +3,11 @@ import {
   Flex,
   Heading,
   Button,
-  HStack,
+  // HStack,
   Skeleton,
   SkeletonText,
   SkeletonCircle,
-  Stack,
+  // Stack,
 } from "@chakra-ui/react";
 import { LuMoveRight } from "react-icons/lu";
 import { useNavigate } from "react-router-dom";

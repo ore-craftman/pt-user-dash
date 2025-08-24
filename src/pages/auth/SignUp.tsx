@@ -12,8 +12,8 @@ import { useMutation } from "@tanstack/react-query";
 import { registerEmail } from "../../services/api";
 const SignUp: FC<{}> = () => {
   const [email, setEmail] = useState("");
-  const { mutate: registerEmailMutation,  } = useMutation({
-    mutationFn: registerEmail,
+  const { mutate: registerEmailMutation } = useMutation({
+    mutationFn: (email: string) => registerEmail(email),
     mutationKey: ["registerEmail"],
   });
   const submitHandler = (e: React.FormEvent) => {

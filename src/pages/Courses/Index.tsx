@@ -8,7 +8,7 @@ import {
   Tab,
   TabIndicator,
   keyframes,
-  Image,
+  // Image,
   Button,
   Skeleton,
   Badge,
@@ -41,7 +41,7 @@ const Courses = () => {
   });
 
   console.log("Courses Data:", data?.data);
-
+  console.log("Error:", error);
   const [tabIndex, setTabIndex] = useState(0);
 
   const tabChangeHandler = (index: number) => {
