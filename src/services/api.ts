@@ -25,6 +25,19 @@ export const apiWithoutAuth = axios.create({
   },
 });
 
+
+export const registerEmail = async (email: string) => {
+  try {
+    const response = await apiWithoutAuth.post<ApiResult<{ email: string }>>(
+      "/auth/register-email/",
+      { email }
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error registering email:", error);
+    throw error;
+  }
+};
 export const signIn = async (email: string, password: string) => {
   try {
     const response = await apiWithoutAuth.post<
@@ -50,7 +63,9 @@ export const getAllCourses = async () => {
 };
 export const getSingleCourse = async (id: string) => {
   try {
-    const response = await api.get<ApiResult<Course>>(`/accounts/course/detail/${id}/`);
+    const response = await api.get<ApiResult<Course>>(
+      `/accounts/course/detail/${id}/`
+    );
     return response.data;
   } catch (error) {
     console.error("Error fetching course:", error);
@@ -157,6 +172,8 @@ export const getLessonQuiz = async (lessonId: string) => {
     throw error;
   }
 };
+
+
 export const answerQuestion = async (questionId: string, choiceId: string) => {
   try {
     const response = await api.post(`/accounts/submit-answer/`, {

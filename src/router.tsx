@@ -3,7 +3,7 @@ import Dashboard from "./pages/Dashboard";
 import Library from "./pages/Library/Index";
 import SingleCourse from "./pages/Library/Identifier";
 import Courses from "./pages/Courses/Index";
-import { BaseRoute } from "./pages/BaseRoute";
+// import { BaseRoute } from "./pages/BaseRoute";
 import Events from "./pages/Events";
 import { CourseDetails } from "./pages/Courses/Identifier";
 // import SignUp from "./pages/auth/SignUp";

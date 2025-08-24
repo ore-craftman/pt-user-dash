@@ -60,11 +60,7 @@ const Dashboard = () => {
             borderRadius="2xl"
             mb={{ base: 4, lg: 6 }}
           >
-            <InfoCard
-              firstName={userProfile?.data?.first_name || "User"}
-              lastName={userProfile?.data?.last_name || "User"}
-              email={userProfile?.data?.email || "User"}
-            />
+            <InfoCard />
           </Box>
 
           <Image src={Stats} alt="" />

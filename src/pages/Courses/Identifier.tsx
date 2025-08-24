@@ -53,6 +53,8 @@ export const CourseDetails = () => {
     enabled: !!id,
   });
   console.log("Course Data:", course?.data);
+  console.log("Loading:", isLoading);
+  console.log("Error:", error);
 
   const courseContent = [
     { icon: VideoIcon, desc: "54 hours on-demand video" },

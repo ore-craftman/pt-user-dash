@@ -2,7 +2,6 @@ import { Box, Flex, Button, Heading, Text, Avatar } from "@chakra-ui/react";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { PiShoppingCartLight } from "react-icons/pi";
 import { IoChevronDownSharp } from "react-icons/io5";
-import { FC } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getUserProfile } from "../../services/api";
 export const InfoCard = () => {
