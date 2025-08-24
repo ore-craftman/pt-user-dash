@@ -20,8 +20,40 @@ import GradIcon from "../../assets/icons/grad.svg";
 import TagIcon from "../../assets/icons/tag.svg";
 import ReactPlayer from "react-player";
 import { IoCartOutline } from "react-icons/io5";
-
+import { useParams } from "react-router-dom";
+import { useQuery, useMutation } from "@tanstack/react-query";
+import { getSingleCourse, initiatePayment } from "../../services/api";
+import tnxRefGenerator from "../../utils/tnxRef";
 export const CourseDetails = () => {
+  const { id } = useParams<{ id: string }>();
+  const mutation = useMutation({
+    mutationFn: (courseIds: string) =>
+      initiatePayment([courseIds], tnxRefGenerator()),
+  });
+
+  const handlePayment = (courseIds: string) => {
+    mutation.mutate(courseIds);
+  };
+
+  console.log("Course ID:", id);
+  if (!id) {
+    return (
+      <Layout>
+        <Text>Course ID is missing</Text>
+      </Layout>
+    );
+  }
+  const {
+    data: course,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["course", id],
+    queryFn: () => getSingleCourse(id as string),
+    enabled: !!id,
+  });
+  console.log("Course Data:", course?.data);
+
   const courseContent = [
     { icon: VideoIcon, desc: "54 hours on-demand video" },
     { icon: BookIcon, desc: "Assignments & quizzes" },
@@ -66,24 +98,29 @@ export const CourseDetails = () => {
                 fontSize={{ base: "md", md: "lg", lg: "xl", xl: "2xl" }}
                 fontWeight={400}
               >
-                Investigative Journalism for beginners
+                {course?.data?.title}
               </Heading>
               <Text color="gray.500" mt={4} mb={2}>
-                Learn from industry professionals and master in less than 100
-                days. this course is for both beginners and amateurs
+                {course?.data?.description}
               </Text>
 
               <Flex fontSize="sm" alignItems="center">
-                <Text color="gray.500">By PT Academy</Text>
+                <Text color="gray.500">
+                  By {course?.data?.tutor_name || "Unknown"}
+                </Text>
 
                 <Box mx={2}>
                   <Image alt="" src={RatingIcon} w={4} h={4} />
                 </Box>
-                <Text color="gold">4.7 Rating</Text>
+                <Text color="gold">
+                  {course?.data?.average_rating || 0} Rating
+                </Text>
                 <Box mx={2}>
                   <Image alt="" src={GlobeIcon} w={4} h={4} />
                 </Box>
-                <Text color="gray.500">English</Text>
+                <Text color="gray.500">
+                  {course?.data?.language || "Unknown"}
+                </Text>
               </Flex>
 
               <Flex fontSize="sm" alignItems="center" mt={4} gap={2}>
@@ -91,7 +128,10 @@ export const CourseDetails = () => {
                   fontSize={{ base: "lg", md: "xl", lg: "2xl" }}
                   fontWeight={500}
                 >
-                  ₦23,000
+                  ₦
+                  {course?.data?.price
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                 </Heading>
 
                 <Badge colorScheme="green" fontWeight={400}>
@@ -122,7 +162,8 @@ export const CourseDetails = () => {
                   Course Details
                 </Text>
                 <Text mt={2} color="gray.500">
-                  Overview: Uncover the secrets of impactful storytelling and
+                  {course?.data?.description}
+                  {/* Overview: Uncover the secrets of impactful storytelling and
                   unveil the truth with our Investigative Journalism
                   Masterclass. This comprehensive course is designed for
                   aspiring journalists, media enthusiasts, and anyone passionate
@@ -151,7 +192,7 @@ export const CourseDetails = () => {
                   Building a Compelling Narrative: Master the art of
                   storytelling. Learn how to craft compelling narratives that
                   engage and inform your audience while maintaining journalistic
-                  integrity.
+                  integrity. */}
                 </Text>
               </Box>
             </Box>
@@ -174,7 +215,10 @@ export const CourseDetails = () => {
                   fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
                   fontWeight={600}
                 >
-                  ₦23,000
+                  ₦
+                  {course?.data?.price
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                 </Heading>
               </Flex>
 
@@ -198,6 +242,8 @@ export const CourseDetails = () => {
                 w="full"
                 py={6}
                 size="medium"
+                type="button"
+                onClick={() => handlePayment(id)}
               >
                 Buy Now
               </Button>

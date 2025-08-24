@@ -2,8 +2,14 @@ import { Box, Flex, Button, Heading, Text, Avatar } from "@chakra-ui/react";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { PiShoppingCartLight } from "react-icons/pi";
 import { IoChevronDownSharp } from "react-icons/io5";
-
+import { FC } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { getUserProfile } from "../../services/api";
 export const InfoCard = () => {
+  const { data: userProfile } = useQuery({
+    queryKey: ["userProfile"],
+    queryFn: getUserProfile,
+  });
   return (
     <Box>
       <Flex justifyContent="space-between">
@@ -37,14 +43,17 @@ export const InfoCard = () => {
               fontWeight={400}
               m={0}
             >
-              Adekunle Adedayo
+              {userProfile?.data?.first_name || "UUser"}{" "}
+              {userProfile?.data?.last_name}
             </Heading>
             <Text color="gray.500" fontSize={{ base: "8px", xl: "10px" }} m={0}>
-              kayfun@gmail.com
+              {userProfile?.data?.email}
             </Text>
           </Box>
           <Avatar
-            name="Dan Abrahmov"
+            name={`${userProfile?.data?.first_name || ""} ${
+              userProfile?.data?.last_name || ""
+            }`}
             src="https://bit.ly/dan-abramov"
             size="sm"
           />

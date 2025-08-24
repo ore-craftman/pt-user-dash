@@ -48,7 +48,7 @@ const Home = () => {
   };
   return (
     <>
-      <header className=" tw-fixed tw-top-0 tw-w-full tw-left-0  tw-bg-white tw-py-12 ">
+      <header className=" tw-fixed tw-z-50 tw-top-0 tw-w-full tw-left-0  tw-bg-white tw-py-12 ">
         <div className="wrapper  tw-px-[140px] tw-flex tw-items-center tw-justify-between ">
           <Logo />
           <nav className="tw-flex tw-gap-12 tw-items-center tw-justify-center">
@@ -273,50 +273,139 @@ const Home = () => {
       <section className=" tw-mt-[300px]  ">
         <div className="wrapper tw-flex tw-flex-col tw-gap-6 tw-items-center ">
           <div className=" tw-flex tw-justify-between tw-gap-4 tw-w-full tw-mb-12 ">
-          <div className="tw-text-dark-purple tw-flex tw-basis-[55%] tw-gap-6 tw-font-bold tw-text-[48px] tw-items-center tw-leading-[140%] tw-capitalize ">
-            <div className="tw-bg-primary tw-rounded-3xl tw-w-1.5 tw-h-[108px] "></div>{" "}
-            explore our specially prepared tracks
+            <div className="tw-text-dark-purple tw-flex tw-basis-[55%] tw-gap-6 tw-font-bold tw-text-[48px] tw-items-center tw-leading-[140%] tw-capitalize ">
+              <div className="tw-bg-primary tw-rounded-3xl tw-w-1.5 tw-h-[108px] "></div>{" "}
+              explore our specially prepared tracks
+            </div>
+            <p className=" tw-font-normal tw-w-[40%] tw-text-[23px] tw-leading-[140%] tw-text-[#969696]  ">
+              The Academy aims to collaborate with institutions in West Africa
+              to offer specialised programmes relating to journalism.
+            </p>
           </div>
-          <p className=" tw-font-normal tw-w-[40%] tw-text-[23px] tw-leading-[140%] tw-text-[#969696]  ">
-            The Academy aims to collaborate with institutions in West Africa to
-            offer specialised programmes relating to journalism.
-          </p>
-        </div>
           {/* <Slider /> */}
         </div>
-      
-        
       </section>
       <section className="tw-mt-[123px]">
-         <div className="wrapper tw-flex tw-flex-col tw-gap-6 tw-items-center ">
+        <div className="wrapper tw-flex tw-flex-col tw-gap-6 tw-items-center ">
           <div className=" tw-flex tw-justify-between tw-gap-4 tw-w-full tw-mb-12 ">
-          <div className="tw-text-dark-purple tw-flex tw-basis-[55%] tw-gap-6 tw-font-bold tw-text-[48px] tw-items-center tw-leading-[140%] tw-capitalize ">
-            <div className="tw-bg-primary tw-rounded-3xl tw-w-1.5 tw-h-[108px] "></div>{" "}
-            what our platform includes
+            <div className="tw-text-dark-purple tw-flex tw-basis-[55%] tw-gap-6 tw-font-bold tw-text-[48px] tw-items-center tw-leading-[140%] tw-capitalize ">
+              <div className="tw-bg-primary tw-rounded-3xl tw-w-1.5 tw-h-[108px] "></div>{" "}
+              what our platform includes
+            </div>
+            <p className=" tw-font-normal tw-w-[40%] tw-text-[23px] tw-leading-[140%] tw-text-[#969696]">
+              We Take Pride In Offering A Comprehensive Suite of Services to
+              Elevate Your Learning Experience.
+            </p>
           </div>
-          <p className=" tw-font-normal tw-w-[40%] tw-text-[23px] tw-leading-[140%] tw-text-[#969696]">
-            We Take Pride In Offering A Comprehensive Suite of Services to Elevate Your Learning Experience.
+          <h3 className=" tw-text-dark-purple tw-text-5xl tw-leading-[140%] tw-text-center tw-mt-[123px] tw-capitalize tw-font-bold ">
+            pre - recorded classes
+          </h3>
+          <p className=" tw-text-[#5F5D61] tw-text-center tw-leading-[140%] tw-font-normal tw-text-[23px] ">
+            At PT Academy, we understand that a seamless learning experience is
+            key to your success. That's why we've designed a user-friendly and
+            interactive student dashboard that puts you in control of your
+            educational journey.
           </p>
-        </div>
-        <h3 className=" tw-text-dark-purple tw-text-5xl tw-leading-[140%] tw-text-center tw-mt-[123px] tw-capitalize tw-font-bold " >pre - recorded classes</h3>
-        <p className=" tw-text-[#5F5D61] tw-text-center tw-leading-[140%] tw-font-normal tw-text-[23px] " >At PT Academy, we understand that a seamless learning experience is key to your success. That's why we've designed a user-friendly and interactive student dashboard that puts you in control of your educational journey.</p>
-        <article className="tw-mt-[123px] tw-flex tw-gap-8 tw-justify-between " >
-<div className="tw-w" >
-  <div className="tw-relative tw-bg-light-gray tw-h-[498px] tw-w-full tw-w-max-[632px] tw-rounded-tl-3xl tw-rounded-tr-3xl ">
-    <img src={bookImage} alt="Book" className="tw-w-full tw-h-full tw-object-cover" />
-  </div>
-</div>
-<div className="tw-w" >
-  <div className="tw-relative tw-bg-light-gray tw-h-[498px] tw-w-full tw-w-max-[632px] tw-rounded-tl-3xl tw-rounded-tr-3xl ">
-    <img src={noteImage} alt="Book" className="tw-w-full tw-h-full tw-object-cover" />
-  </div>
-</div>
-        </article>
+          <article className="tw-mt-[123px] tw-mb-32 tw-flex tw-gap-8 tw-justify-between ">
+            <div className="tw-w">
+              <div className="tw-relative tw-bg-light-gray tw-h-[498px] tw-w-full tw-w-max-[632px] tw-rounded-tl-3xl tw-rounded-tr-3xl ">
+                <img
+                  src={bookImage}
+                  alt="Book"
+                  className="tw-w-full tw-h-full tw-object-cover"
+                />
+                <div className="tw-pt-6 tw-flex tw-flex-col tw-gap-6 ">
+                  <h4 className="tw-text-dark-purple tw-text-[33px] tw-capitalize tw-leading-[140%]">
+                    personalized learning path
+                  </h4>
+                  <p className="tw-text-[#5F5D61] tw-text-[18px] tw-leading-[140%] tw-font-normal">
+                    This type of class emphasizes communication and engagement
+                    between the instructor (tutor) and the students. It allows
+                    for a dynamic exchange of information, questions, and
+                    discussions, fostering a more participatory and
+                    collaborative learning environment.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="tw-w">
+              <div className="tw-relative tw-bg-light-gray tw-h-[498px] tw-w-full tw-w-max-[632px] tw-rounded-tl-3xl tw-rounded-tr-3xl ">
+                <img
+                  src={noteImage}
+                  alt="Book"
+                  className="tw-w-full tw-h-full tw-object-cover"
+                />
+                <div className="tw-pt-6 tw-flex tw-flex-col tw-gap-6 ">
+                  <h4 className="tw-text-dark-purple tw-text-[33px] tw-capitalize tw-leading-[140%]">
+                    track your progress
+                  </h4>
+                  <p className="tw-text-[#5F5D61] tw-text-[18px] tw-leading-[140%] tw-font-normal">
+                    a scheduled class is a planned educational session with a
+                    defined timeframe, providing structure and organization to
+                    the learning process. we have prepared this classes to
+                    enable business people participate and make learning easier
+                    and fun.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+          <h3 className=" tw-text-dark-purple tw-text-5xl tw-leading-[140%] tw-text-center tw-mt-[123px] tw-capitalize tw-font-bold ">
+            exclusively prepare live classes
+          </h3>
+          <p className=" tw-text-[#5F5D61] tw-text-center tw-leading-[140%] tw-font-normal tw-text-[23px] ">
+            we have specially prepared live classes for you to elevate your
+            learning and ask questions to tutors live and get quick responds
+          </p>
+          <article className="tw-mt-[123px] tw-mb-32 tw-flex tw-gap-8 tw-justify-between ">
+            <div className="tw-w">
+              <div className="tw-relative tw-bg-light-gray tw-h-[498px] tw-w-full tw-w-max-[632px] tw-rounded-tl-3xl tw-rounded-tr-3xl ">
+                <img
+                  src={bookImage}
+                  alt="Book"
+                  className="tw-w-full tw-h-full tw-object-cover"
+                />
+                <div className="tw-pt-6 tw-flex tw-flex-col tw-gap-6 ">
+                  <h4 className="tw-text-dark-purple tw-text-[33px] tw-capitalize tw-leading-[140%]">
+                    interactive classes
+                  </h4>
+                  <p className="tw-text-[#5F5D61] tw-text-[18px] tw-leading-[140%] tw-font-normal">
+                    This type of class emphasizes communication and engagement
+                    between the instructor (tutor) and the students. It allows
+                    for a dynamic exchange of information, questions, and
+                    discussions, fostering a more participatory and
+                    collaborative learning environment.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="tw-w">
+              <div className="tw-relative tw-bg-light-gray tw-h-[498px] tw-w-full tw-w-max-[632px] tw-rounded-tl-3xl tw-rounded-tr-3xl ">
+                <img
+                  src={noteImage}
+                  alt="Book"
+                  className="tw-w-full tw-h-full tw-object-cover"
+                />
+                <div className="tw-pt-6 tw-flex tw-flex-col tw-gap-6 ">
+                  <h4 className="tw-text-dark-purple tw-text-[33px] tw-capitalize tw-leading-[140%]">
+                    scheduled classes
+                  </h4>
+                  <p className="tw-text-[#5F5D61] tw-text-[18px] tw-leading-[140%] tw-font-normal">
+                    a scheduled class is a planned educational session with a
+                    defined timeframe, providing structure and organization to
+                    the learning process. we have prepared this classes to
+                    enable business people participate and make learning easier
+                    and fun.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
-      <footer className=" !tw-py-[60px] tw-bg-dark-purple tw-w-full tw-px-[150px]  ">
+      <footer className=" !tw-py-[60px] tw-bg-dark-purple tw-w-full tw-px-[150px] tw-mt-40 ">
         <div className="wrapper tw-flex tw-flex-col ">
-          <div className=" tw-flex tw-mx-[10%] tw-w-[calc(100%_-_20%)] tw-justify-between " >
+          <div className=" tw-flex tw-mx-[10%] tw-w-[calc(100%_-_20%)] tw-justify-between ">
             <div className=" tw-mt-[29px] tw-flex tw-flex-col  tw-basis-[35%] ">
               <p className=" tw-flex tw-flex-col tw-gap-8 tw-text-white tw-font-normal tw-text-[23px] tw-leading-[140%]">
                 Ready to get started?
@@ -325,45 +414,45 @@ const Home = () => {
             </div>
             <div className="tw-flex tw-basis-[45%] tw-justify-between ">
               <div className="tw-flex tw-flex-col tw-gap-2.5">
-              <p className=" tw-text-primary tw-text-[23px] tw-leading-[140%] tw-font-normal  ">
-                Services
-              </p>
-              <ul className=" tw-flex tw-flex-col tw-gap-[13px] ">
-                {[
-                  { title: "Courses", link: "#" },
-                  { title: "Campaigns", link: "#" },
-                  { title: "Branding", link: "#" },
-                  { title: "Offline", link: "#" },
-                ].map((item, index) => (
-                  <li
-                    key={index}
-                    className=" tw-text-white tw-text-[19px] tw-leading-[140%] tw-font-normal  "
-                  >
-                    <a href={item.link}>{item.title}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="tw-flex tw-flex-col tw-gap-2.5">
-              <p className=" tw-text-primary tw-text-[23px] tw-leading-[140%] tw-font-normal  ">
-                About
-              </p>
-              <ul className=" tw-flex tw-flex-col tw-gap-[13px] ">
-                {[
-                  { title: "Our story", link: "#" },
-                  { title: "Benefits", link: "#" },
-                  { title: "Team", link: "#" },
-                  { title: "Careers", link: "#" },
-                ].map((item, index) => (
-                  <li
-                    key={index}
-                    className=" tw-text-white tw-text-[19px] tw-leading-[140%] tw-font-normal  "
-                  >
-                    <a href={item.link}>{item.title}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                <p className=" tw-text-primary tw-text-[23px] tw-leading-[140%] tw-font-normal  ">
+                  Services
+                </p>
+                <ul className=" tw-flex tw-flex-col tw-gap-[13px] ">
+                  {[
+                    { title: "Courses", link: "#" },
+                    { title: "Campaigns", link: "#" },
+                    { title: "Branding", link: "#" },
+                    { title: "Offline", link: "#" },
+                  ].map((item, index) => (
+                    <li
+                      key={index}
+                      className=" tw-text-white tw-text-[19px] tw-leading-[140%] tw-font-normal  "
+                    >
+                      <a href={item.link}>{item.title}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="tw-flex tw-flex-col tw-gap-2.5">
+                <p className=" tw-text-primary tw-text-[23px] tw-leading-[140%] tw-font-normal  ">
+                  About
+                </p>
+                <ul className=" tw-flex tw-flex-col tw-gap-[13px] ">
+                  {[
+                    { title: "Our story", link: "#" },
+                    { title: "Benefits", link: "#" },
+                    { title: "Team", link: "#" },
+                    { title: "Careers", link: "#" },
+                  ].map((item, index) => (
+                    <li
+                      key={index}
+                      className=" tw-text-white tw-text-[19px] tw-leading-[140%] tw-font-normal  "
+                    >
+                      <a href={item.link}>{item.title}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
             <div className="tw-flex tw-flex-col tw-gap-2.5">
               <p className=" tw-text-primary tw-text-[23px] tw-leading-[140%] tw-font-normal  ">

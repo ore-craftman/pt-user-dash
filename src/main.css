@@ -52,3 +52,14 @@
         transform: translateX(-100%);
     }
 }
+
+.bg-login{
+    background: linear-gradient(130deg, #FCFAFF 71.89%, #EDE1FF 102.5%);
+}
+
+.welcome-gradient{
+    background: linear-gradient(90deg, #782DF3 30%, #7A2199 114.83%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}

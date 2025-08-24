@@ -9,7 +9,7 @@ import {
 import { FC, useState } from "react";
 import { PtInput } from "../../components/ui/forms/PtInput";
 import { useMutation } from "@tanstack/react-query";
-import { registerEmail } from "../../utils/api";
+import { registerEmail } from "../../services/api";
 const SignUp: FC<{}> = () => {
   const [email, setEmail] = useState("");
   const { mutate: registerEmailMutation,  } = useMutation({

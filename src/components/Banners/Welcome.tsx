@@ -2,8 +2,7 @@ import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
 import { IoChevronForwardCircleSharp } from "react-icons/io5";
 import WelcomeBg from "../../assets/bg/welcome-bg.svg";
 import { useNavigate } from "react-router-dom";
-
-export const WelcomeBanner = ({ firstname }: { firstname: string }) => {
+export const WelcomeBanner = ({ firstName }: { firstName: string }) => {
   const navigate = useNavigate();
   return (
     <Box
@@ -20,7 +19,7 @@ export const WelcomeBanner = ({ firstname }: { firstname: string }) => {
             color="primary.500"
             fontSize={{ base: "xl", md: "2xl", lg: "4xl" }}
             fontWeight={500}
-          >{`Welcome, ${firstname}`}</Heading>
+          >{`Welcome, ${firstName}`}</Heading>
           <Text
             color="primary.500"
             fontSize={{ base: "md", md: "lg", lg: "xl" }}
